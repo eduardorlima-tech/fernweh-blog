@@ -1,34 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fernweh | Página Inicial</title>
 
-  <title>Fernweh | Página Inicial</title>
+    <script src="./js/sessao.js"></script>
 
-  <script src="./js/sessao.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css" />
+    <link rel="icon" href="./assets/icon/favicon2.ico" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+  </head>
 
-  <link rel="stylesheet" href="./css/estilo.css">
-  <link rel="icon" href="./assets/icon/favicon2.ico">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-</head>
+  <body>
+    <header>
+      <a href="" class="logo">
+        <img src="./assets/imgs/logo.gif" alt="" />
+      </a>
 
-<body>
+      <span class="nome-site">Fernweh</span>
 
-  <header>
-    <a href="" class="logo">
-      <img src="./assets/imgs/logo.gif" alt="">
-    </a>
-    <nav class="navigation">
-      <a href="#">Home</a>
-      <a href="#">Quiz</a>
-      <a href="#">Dashboard</a>
-      <button class="btnLogin">Login</button>
-    </nav>
-  </header>
+      <nav class="navigation">
+        <a href="#">Home</a>
+        <a href="#">Quiz</a>
+        <a href="#">Dashboard</a>
+        <button class="btnLogin">Login</button>
+      </nav>
+    </header>
 
-</body>
+    <main>
+      <section class="hero">
+        <h1 class="hero-titulo">
+          <span class="linha linha1">Viajar</span>
+          <span class="linha linha2">muda</span>
+          <span class="linha linha3">o olhar</span>
+        </h1>
+      </section>
 
+      <section class="explore">
+        <p class="explore-label">
+          <span class="ponto"></span> Explore o Fernweh
+        </p>
+
+        <div class="explore-titulos">
+          <h2>Se perder</h2>
+          <h2>Para se encontrar</h2>
+        </div>
+
+        <div class="carrossel">
+          <div class="trilho">
+            <article class="card">
+              <img src="./assets/imgs/card1.jpeg" alt="" />
+              <h3>Novos<br />caminhos</h3>
+            </article>
+
+            <article class="card">
+              <img src="./assets/imgs/card2.jpeg" alt="" />
+              <h3>Outras<br />formas de viver</h3>
+            </article>
+
+            <article class="card">
+              <img src="./assets/imgs/card3.jpeg" alt="" />
+              <h3>Encontros<br />pelo caminho</h3>
+            </article>
+
+            <article class="card">
+              <img src="./assets/imgs/card4.jpeg" alt="" />
+              <h3>Além do<br />cartão-postal</h3>
+            </article>
+
+            <article class="card">
+              <img src="./assets/imgs/card5.jpg" alt="" />
+              <h3>Um novo<br />olhar</h3>
+            </article>
+
+            <svg
+              class="onda"
+              viewBox="0 0 1440 128"
+              preserveAspectRatio="none"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M0 125.64C65 125.64 43 -12.3605 134 2.6395C214 15.6395 300 72.6395 383 39.6395C520 -14.3605 496 144.639 638 103.64C798 55.6395 841 35.6395 910 66.6395C1040 130.639 1042 -12.3605 1140 14.6395L1143.03 15.4752C1246.07 43.9426 1301.35 59.215 1440 15.6395"
+                stroke-width="3"
+                stroke="#FF6B35"
+                vector-effect="non-scaling-stroke"
+              />
+            </svg>
+          </div>
+        </div>
+
+        <div class="explore-textos">
+          <p>
+            Viajar é entrar em contato com outras maneiras de viver.<br />
+            Comece pelas histórias e descubra o que faz sentido para você.
+          </p>
+          <p>
+            Não é sobre riscar destinos de uma lista.<br />
+            É sobre voltar com novas perguntas.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

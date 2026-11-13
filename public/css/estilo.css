@@ -1,20 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Italianno&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: #a9b5a3;
+}
+
+.hero {
+  position: relative;
   min-height: 100vh;
-  background: url(../assets/imgs/banner-principal.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: url(../assets/imgs/banner-principal.jpg) no-repeat center / cover;
 }
 
 header {
@@ -28,6 +30,19 @@ header {
   align-items: center;
   z-index: 99;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0));
+}
+
+.nome-site {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.8em;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  cursor: default;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .logo img {
@@ -48,7 +63,7 @@ header {
 }
 
 .navigation a::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
@@ -58,7 +73,7 @@ header {
   border-radius: 5px;
   transform-origin: right;
   transform: scaleX(0);
-  transition: transform .5s;
+  transition: transform 0.5s;
 }
 
 .navigation a:hover:after {
@@ -78,10 +93,160 @@ header {
   color: #fff;
   font-weight: 500;
   margin-left: 40px;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .navigation .btnLogin:hover {
   background: #fff;
   color: #162938;
+}
+
+.linha {
+  position: absolute;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(4rem, 9vw, 8rem);
+  line-height: 1;
+  color: #e8dfc8;
+  text-transform: uppercase;
+}
+
+.linha1 {
+  top: 22%;
+  left: 14%;
+}
+
+.linha2 {
+  top: 48%;
+  right: 12%;
+}
+
+.linha3 {
+  bottom: 6%;
+  left: 35%;
+}
+
+.explore {
+  --card: calc((100vw - 152px) / 4);
+  background: #a9b5a3;
+  color: #2b3a26;
+  padding: 70px 0 60px 80px;
+}
+
+.explore-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.65em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.ponto {
+  width: 7px;
+  height: 7px;
+  background: #ff6b2c;
+  display: inline-block;
+}
+
+.explore-titulos {
+  display: flex;
+  margin: 40px 0 28px;
+}
+
+.explore-titulos h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.8rem, 3.6vw, 3.2rem);
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.explore-titulos h2:first-child {
+  width: calc(var(--card) * 3 + 24px);
+  flex-shrink: 0;
+}
+
+.carrossel {
+  margin-left: -80px;
+  padding-left: 80px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 80px;
+  scrollbar-width: none;
+}
+
+.carrossel::-webkit-scrollbar {
+  display: none;
+}
+
+.trilho {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  width: max-content;
+  padding-right: 80px;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 var(--card);
+  height: 340px;
+  border-radius: 8px;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0) 55%
+  );
+}
+
+.card h3 {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 2;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.7rem;
+  line-height: 1;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.onda {
+  position: absolute;
+  left: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% + 80px);
+  height: 128px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.explore-textos {
+  display: flex;
+  margin-top: 28px;
+  font-size: 0.75em;
+  line-height: 1.6;
+}
+
+.explore-textos p:first-child {
+  width: calc(var(--card) * 3 + 24px);
+  flex-shrink: 0;
 }
