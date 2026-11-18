@@ -24,7 +24,40 @@
                 <span>ou use seu e-mail para se cadastrar</span>
                 <input type="text" placeholder="Nome">
                 <input type="email" placeholder="E-mail">
-                <input type="password" placeholder="Senha">
+                <div class="inputSenha">
+                    <input type="password" placeholder="Senha" id="ipt">
+                    <button id="eyeBtn" type="button">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                </div>
+
+                <div class="passwordStatus">
+                    <div class="statusTop">
+                        <div>
+                            <span>Força da senha:</span>
+                            <strong id="pStatus">Fraca</strong>
+                        </div>
+
+                        <span id="strengthIcon" class="statsuIcon">
+                            <i class="fa-solid fa-shield"></i>
+                            <span class="hoverCard">
+                                <strong>Uma senha forte tem:</strong>
+                                • Mínimo de 8 caracteres<br>
+                                • Letra maiúscula<br>
+                                • Letra minúscula<br>
+                                • Número<br>
+                                • Caractere especial (@, #, !)<br>
+                                <br>
+                                Atenda a pelo menos 4 critérios para ser forte.
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="range">
+                        <div class="rangeStatus"></div>
+                    </div>
+                </div>
+
                 <button>Cadastrar</button>
             </form>
         </div>
@@ -60,8 +93,9 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
+body {
     background-color: #b2baa8;
     display: flex;
     align-items: center;
@@ -15,14 +15,14 @@ body{
     height: 100vh;
 }
 
-h1{
+h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 42px;
     font-weight: 400;
     letter-spacing: 1px;
 }
 
-.container{
+.container {
     background-color: #e6dfc8;
     color: #26241a;
     border-radius: 30px;
@@ -34,24 +34,24 @@ h1{
     min-height: 480px;
 }
 
-.container p{
+.container p {
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
 }
 
-.container span{
+.container span {
     font-size: 12px;
 }
 
-.container a{
+.container a {
     color: inherit;
     font-size: 13px;
     margin: 15px 0 10px;
 }
 
-.container button{
+.container button {
     background-color: #ff6b35;
     color: #26241a;
     font-size: 12px;
@@ -63,15 +63,21 @@ h1{
     text-transform: uppercase;
     margin-top: 10px;
     cursor: pointer;
+    transition: 0.5s;
 }
 
-.container button.hidden{
+.container button.hidden {
     background-color: transparent;
     border-color: #efe8d2;
     color: #efe8d2;
 }
 
-.container form{
+.container button:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.container form {
     background-color: #e6dfc8;
     display: flex;
     align-items: center;
@@ -81,7 +87,7 @@ h1{
     height: 100%;
 }
 
-.container input{
+.container input {
     background-color: transparent;
     border: 2px solid #6e684f;
     margin: 8px 0;
@@ -92,7 +98,7 @@ h1{
     outline: none;
 }
 
-.form-container{
+.form-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -101,42 +107,46 @@ h1{
     transition: all 0.6s ease-in-out;
 }
 
-.sign-in{
+.sign-in {
     z-index: 2;
 }
 
-.container.active .sign-in{
+.container.active .sign-in {
     transform: translateX(100%);
 }
 
-.sign-up{
+.sign-up {
     opacity: 0;
     z-index: 1;
 }
 
-.container.active .sign-up{
+.container.active .sign-up {
     transform: translateX(100%);
     opacity: 1;
     z-index: 5;
     animation: move 0.6s;
 }
 
-@keyframes move{
-    0%, 49.99%{
+@keyframes move {
+
+    0%,
+    49.99% {
         opacity: 0;
         z-index: 1;
     }
-    50%, 100%{
+
+    50%,
+    100% {
         opacity: 1;
         z-index: 5;
     }
 }
 
-.social-icons{
+.social-icons {
     margin: 20px 0;
 }
 
-.social-icons a{
+.social-icons a {
     background-color: rgba(0, 0, 0, 0.04);
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 20%;
@@ -149,7 +159,7 @@ h1{
     height: 40px;
 }
 
-.toggle-container{
+.toggle-container {
     position: absolute;
     top: 0;
     left: 50%;
@@ -161,14 +171,14 @@ h1{
     z-index: 1000;
 }
 
-.container.active .toggle-container{
+.container.active .toggle-container {
     transform: translateX(-100%);
     border-radius: 0 150px 100px 0;
 }
 
-.toggle{
+.toggle {
     background: linear-gradient(rgba(18, 24, 16, 0.55), rgba(18, 24, 16, 0.55)),
-                url('../assets/imgs/banner-login.jpg') center 40% / 100% auto no-repeat;
+        url('../assets/imgs/banner-login.jpg') center 40% / 100% auto no-repeat;
     color: #efe8d2;
     position: relative;
     left: -100%;
@@ -177,11 +187,11 @@ h1{
     transition: all 0.6s ease-in-out;
 }
 
-.container.active .toggle{
+.container.active .toggle {
     transform: translateX(50%);
 }
 
-.toggle-panel{
+.toggle-panel {
     position: absolute;
     width: 50%;
     height: 100%;
@@ -195,7 +205,7 @@ h1{
     transition: all 0.6s ease-in-out;
 }
 
-.brand{
+.brand {
     position: absolute;
     top: 30px;
     left: 0;
@@ -205,18 +215,146 @@ h1{
     letter-spacing: 1.5px;
 }
 
-.toggle-left{
+.toggle-left {
     transform: translateX(-200%);
 }
 
-.container.active .toggle-left{
+.container.active .toggle-left {
     transform: translateX(0);
 }
 
-.toggle-right{
+.toggle-right {
     right: 0;
 }
 
-.container.active .toggle-right{
+.container.active .toggle-right {
     transform: translateX(200%);
+}
+
+.inputSenha {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.inputSenha input {
+    padding-right: 48px;
+}
+
+.passwordStatus {
+    width: 100%;
+    margin: 4px 0;
+}
+
+.statusTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.statusTop>div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.statusTop div span {
+    color: #6e684f;
+    font-size: 13px;
+}
+
+#pStatus {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ef4444;
+}
+
+.statsuIcon {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    transition: 0.3s ease;
+}
+
+.statsuIcon i {
+    font-size: 17px;
+}
+
+.hoverCard {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    right: 0;
+    width: 230px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #f4efdd;
+    color: #26241a;
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+}
+
+.hoverCard strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.statsuIcon:hover .hoverCard {
+    opacity: 1;
+    visibility: visible;
+}
+
+.range {
+    width: 100%;
+    height: 7px;
+    border-radius: 20px;
+    background: rgba(110, 104, 79, 0.35);
+    overflow: hidden;
+}
+
+.rangeStatus {
+    width: 15%;
+    height: 100%;
+    border-radius: 20px;
+    background: #ef4444;
+    transition: width 0.4s ease, background 0.3s ease;
+}
+
+#eyeBtn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: #6e684f;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#eyeBtn:hover {
+    background: rgba(0, 0, 0, 0.08);
+    color: #26241a;
 }
