@@ -22,11 +22,11 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>ou use seu e-mail para se cadastrar</span>
-                <input type="text" placeholder="Nome">
-                <input type="email" placeholder="E-mail">
+                <input type="text" placeholder="Nome" id="ipt_nome" aria-label="Nome" autocomplete="name">
+                <input type="email" placeholder="E-mail" id="ipt_email" aria-label="E-mail" autocomplete="email">
                 <div class="inputSenha">
-                    <input type="password" placeholder="Senha" id="ipt">
-                    <button id="eyeBtn" type="button">
+                    <input type="password" placeholder="Senha" id="ipt" aria-label="Senha" autocomplete="new-password">
+                    <button id="eyeBtn" type="button" aria-label="Mostrar ou ocultar senha">
                         <i class="fa-solid fa-eye"></i>
                     </button>
                 </div>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
 
-                <button>Cadastrar</button>
+                <button type="button" onclick="cadastrar()">Cadastrar</button>
             </form>
         </div>
         <div class="form-container sign-in">
@@ -71,10 +71,10 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>ou use seu e-mail e senha</span>
-                <input type="email" placeholder="E-mail">
-                <input type="password" placeholder="Senha">
+                <input type="email" placeholder="E-mail" aria-label="E-mail" autocomplete="email">
+                <input type="password" placeholder="Senha" aria-label="Senha" autocomplete="current-password">
                 <a href="#">Esqueceu sua senha?</a>
-                <button>Entrar</button>
+                <button type="button">Entrar</button>
             </form>
         </div>
         <div class="toggle-container">
@@ -83,13 +83,13 @@
                     <div class="brand">FERNWEH</div>
                     <h1>Olá, Viajante!</h1>
                     <p>Insira seus dados para usar todos os recursos do site</p>
-                    <button class="hidden" id="login">Entrar</button>
+                    <button type="button" class="hidden" id="login">Entrar</button>
                 </div>
                 <div class="toggle-panel toggle-right">
                     <div class="brand">FERNWEH</div>
                     <h1>Bem-vindo de volta!</h1>
                     <p>Cadastre-se com seus dados para usar todos os recursos do site</p>
-                    <button class="hidden" id="register">Cadastrar</button>
+                    <button type="button" class="hidden" id="register">Cadastrar</button>
                 </div>
             </div>
         </div>

@@ -76,12 +76,19 @@ header {
   transition: transform 0.5s;
 }
 
+.navigation .btnLogin::after {
+  display: none;
+}
+
 .navigation a:hover:after {
   transform-origin: left;
   transform: scaleX(1);
 }
 
 .navigation .btnLogin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 130px;
   height: 50px;
   background: transparent;
@@ -94,6 +101,7 @@ header {
   font-weight: 500;
   margin-left: 40px;
   transition: 0.5s;
+  text-decoration: none;
 }
 
 .navigation .btnLogin:hover {
