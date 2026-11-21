@@ -46,9 +46,7 @@
                                 • Letra maiúscula<br>
                                 • Letra minúscula<br>
                                 • Número<br>
-                                • Caractere especial (@, #, !)<br>
-                                <br>
-                                Atenda a pelo menos 4 critérios para ser forte.
+                                • Caractere especial (@, #, !)
                             </span>
                         </span>
                     </div>
@@ -71,10 +69,15 @@
                     <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>ou use seu e-mail e senha</span>
-                <input type="email" placeholder="E-mail" aria-label="E-mail" autocomplete="email">
-                <input type="password" placeholder="Senha" aria-label="Senha" autocomplete="current-password">
+                <input type="email" placeholder="E-mail" id="ipt_email_login" aria-label="E-mail" autocomplete="email">
+                <div class="inputSenha">
+                    <input type="password" placeholder="Senha" id="ipt_senha_login" aria-label="Senha" autocomplete="current-password">
+                    <button id="eyeBtn" type="button" aria-label="Mostrar ou ocultar senha">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
+                </div>
                 <a href="#">Esqueceu sua senha?</a>
-                <button type="button">Entrar</button>
+                <button type="button" onclick="entrar()">Entrar</button>
             </form>
         </div>
         <div class="toggle-container">

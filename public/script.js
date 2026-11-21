@@ -16,6 +16,11 @@ const inp = document.getElementById('ipt');
 const eyeBtn = document.getElementById('eyeBtn');
 const eyeIcon = eyeBtn.querySelector('i');
 
+const inpEmailLogin = document.getElementById('ipt_email_login');
+const inpSenhaLogin = document.getElementById('ipt_senha_login');
+const eyeBtnLogin = document.querySelector('.sign-in #eyeBtn');
+const eyeIconLogin = eyeBtnLogin.querySelector('i');
+
 const pStatus = document.getElementById('pStatus');
 const range = document.querySelector('.rangeStatus');
 const strengthIcon = document.querySelector('#strengthIcon i');
@@ -27,6 +32,16 @@ eyeBtn.addEventListener('click', () => {
     } else {
         inp.type = 'password';
         eyeIcon.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+});
+
+eyeBtnLogin.addEventListener('click', () => {
+    if (inpSenhaLogin.type === 'password') {
+        inpSenhaLogin.type = 'text';
+        eyeIconLogin.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+        inpSenhaLogin.type = 'password';
+        eyeIconLogin.classList.replace('fa-eye-slash', 'fa-eye');
     }
 });
 
@@ -109,5 +124,18 @@ function cadastrar() {
         alert("Cadastro realizado com sucesso!");
         limparCadastro();
         irParaLogin();
+    }
+}
+
+function entrar() {
+    const emailVar = inpEmailLogin.value.trim();
+    const senhaVar = inpSenhaLogin.value;
+
+    if (emailVar === "" || senhaVar === "") {
+        alert("Preencha todos os campos.");
+    } else if (emailVar.indexOf("@") === -1 || emailVar.indexOf(".") === -1) {
+        alert("Digite um e-mail válido.");
+    } else {
+        window.location.href = "dashboard/dashboard.html";
     }
 }
