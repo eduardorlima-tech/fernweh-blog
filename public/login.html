@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Login | Cadastro</title>
+    <link rel="icon" href="./assets/imgs/logo.gif">
+    <script src="./js/sessao.js"></script>
+    <title>Fernweh | Login e Cadastro</title>
 </head>
 
 <body>
@@ -26,7 +28,7 @@
                 <input type="email" placeholder="E-mail" id="ipt_email" aria-label="E-mail" autocomplete="email">
                 <div class="inputSenha">
                     <input type="password" placeholder="Senha" id="ipt" aria-label="Senha" autocomplete="new-password">
-                    <button id="eyeBtn" type="button" aria-label="Mostrar ou ocultar senha">
+                    <button id="eyeBtnCadastro" type="button" aria-label="Mostrar ou ocultar senha">
                         <i class="fa-solid fa-eye"></i>
                     </button>
                 </div>
@@ -72,7 +74,7 @@
                 <input type="email" placeholder="E-mail" id="ipt_email_login" aria-label="E-mail" autocomplete="email">
                 <div class="inputSenha">
                     <input type="password" placeholder="Senha" id="ipt_senha_login" aria-label="Senha" autocomplete="current-password">
-                    <button id="eyeBtn" type="button" aria-label="Mostrar ou ocultar senha">
+                    <button id="eyeBtnLogin" type="button" aria-label="Mostrar ou ocultar senha">
                         <i class="fa-solid fa-eye"></i>
                     </button>
                 </div>
@@ -98,7 +100,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./js/login.js"></script>
 </body>
 
 </html>
