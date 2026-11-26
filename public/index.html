@@ -10,8 +10,10 @@
 
   <script src="./js/sessao.js"></script>
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./css/footer.css">
   <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
+  <link rel="icon" href="./assets/imgs/logo.gif" />
 </head>
 
 <body>
@@ -23,15 +25,15 @@
     <span class="nome-site">Fernweh</span>
 
     <nav class="navigation">
-      <a href="#">Home</a>
-      <a href="#">Quiz</a>
-      <a href="#">Dashboard</a>
+      <a href="#explore">Caminhos</a>
+      <a href="#viagem">Propósito</a>
+      <a href="#palavras">Essência</a>
       <a href="login.html" class="btnLogin">Login</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
+    <section id="hero" class="hero">
       <h1>
         <span class="linha linha1">Viajar</span>
         <span class="linha linha2">muda</span>
@@ -39,7 +41,7 @@
       </h1>
     </section>
 
-    <section class="explore">
+    <section id="explore" class="explore">
       <p class="explore-label">
         <span class="ponto"></span> Explore o Fernweh
       </p>
@@ -97,14 +99,14 @@
       </div>
     </section>
 
-    <section class="viagem">
+    <section id="viagem" class="viagem">
       <h2 class="viagem-titulo">
         Eu viajo<br />
         para me encontrar
       </h2>
     </section>
 
-    <section class="palavras">
+    <section id="palavras" class="palavras">
       <img class="textura textura-andorinhas" src="assets/imgs/Textura — andorinhas.png" alt="" />
       <img class="textura textura-borboleta" src="assets/imgs/Textura — borboleta.png" alt="" />
       <img class="textura textura-lirios-esq" src="assets/imgs/Textura — lírios em gravura.png" alt="" />
@@ -125,6 +127,65 @@
       </ul>
     </section>
   </main>
+
+  <footer>
+    <div id="footer-content">
+      <div id="footer-contacts">
+        <img src="./assets/imgs/logo2.png" alt="">
+        
+        <p>Tudo gira em torno dos seus sonhos</p>
+
+        <div id="footer-social-media">
+          <a href="#" class="footer-link" id="instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="#" class="footer-link" id="facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+
+          <a href="#" class="footer-link" id="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <ul class="footer-list">
+        <li>
+          <h3>Blog</h3>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Tech</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Aventuras</a>
+        </li>
+        <li>
+          <a href="#" class="footer-link">Musicas</a>
+        </li>
+      </ul>
+
+      <div id="footer-subscribe">
+        <h3>Increva-se</h3>
+
+        <p>
+          Seu melhor e-mail, para receber nossas novidades e talvez algumas boas risadas
+        </p>
+
+        <div id="input-group">
+          <input type="email" id="email">
+          <button>
+            <i class="fa-regular fa-envelope"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer-copyright">
+      &#169
+      2026 todos os direitos reservados
+    </div>
+  </footer>
 </body>
 
 </html>

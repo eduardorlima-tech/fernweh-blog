@@ -333,7 +333,7 @@ h1 {
     transition: width 0.4s ease, background 0.3s ease;
 }
 
-#eyeBtn {
+.container .inputSenha button {
     position: absolute;
     right: 8px;
     top: 50%;
@@ -354,7 +354,7 @@ h1 {
     transition: 0.2s ease;
 }
 
-#eyeBtn:hover {
+.container .inputSenha button:hover {
     background: rgba(0, 0, 0, 0.08);
     color: #26241a;
 }
