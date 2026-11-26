@@ -2,17 +2,16 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/favicon2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/imgs/logo.gif" type="image/gif">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fernweh | Dashboards</title>
 
-
+    <link rel="stylesheet" href="./../css/sidebar.css">
     <link rel="stylesheet" href="./../css/dashboards.css">
     <link rel="stylesheet" href="./../css/estilo.css" />
     <script src="../js/sessao.js"></script>
-    <script src="./../js/alerta.js"></script>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,8 +20,6 @@
         rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -34,7 +31,7 @@
                 </span>
 
                 <div class="text header-text">
-                    <span class="name">Edu</span>
+                    <span class="name" id="nomeUsuario">Viajante</span>
                     <span class="profession">Lindo de Bonito</span>
                 </div>
             </div>
@@ -50,13 +47,13 @@
                 </li>
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="../quiz/index.html">
                             <i class='bx bx-home-alt icon'></i>
                             <span class="text nav-text">Quiz</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="../dashboard/dashboard.html">
                             <i class='bx bx-bar-chart-alt-2 icon'></i>
                             <span class="text nav-text">Dash</span>
                         </a>
@@ -72,7 +69,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="../index.html">
+                    <a href="../index.html" id="btnSair">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Logout</span>
                     </a>
@@ -94,6 +91,125 @@
         </div>
     </nav>
 
+    <section class="home">
+        <h1 class="titulo-pagina">Dashboard</h1>
+
+        <div class="kpis">
+            <div class="kpi">
+                <div class="kpi-topo">
+                    <span>Países visitados</span>
+                    <div class="kpi-icone roxo"><i class='bx bx-world'></i></div>
+                </div>
+                <h2 id="kpiPaises">–</h2>
+                <p class="neutro">Países em que você já esteve</p>
+            </div>
+
+            <div class="kpi">
+                <div class="kpi-topo">
+                    <span>Viagens concluídas</span>
+                    <div class="kpi-icone verde"><i class='bx bx-check-circle'></i></div>
+                </div>
+                <h2 id="kpiConcluidas">–</h2>
+                <p class="neutro">Viagens que você já fez</p>
+            </div>
+
+            <div class="kpi">
+                <div class="kpi-topo">
+                    <span>Viagens planejadas</span>
+                    <div class="kpi-icone laranja"><i class='bx bx-time-five'></i></div>
+                </div>
+                <h2 id="kpiPlanejadas">–</h2>
+                <p class="neutro">Viagens que ainda vão acontecer</p>
+            </div>
+
+            <div class="kpi">
+                <div class="kpi-topo">
+                    <span>Dias viajando</span>
+                    <div class="kpi-icone azul"><i class='bx bx-calendar'></i></div>
+                </div>
+                <h2 id="kpiDias">–</h2>
+                <p class="neutro">Dias viajando no último ano</p>
+            </div>
+        </div>
+
+        <div class="graficos">
+            <div class="card-grafico">
+                <h3>Viagens por mês</h3>
+                <p>Meses em que você costuma viajar</p>
+                <div class="area-grafico">
+                    <canvas id="graficoLinha"></canvas>
+                </div>
+            </div>
+
+            <div class="card-grafico">
+                <h3>Destinos por continente</h3>
+                <p>Continentes em que você já esteve</p>
+                <div class="area-grafico">
+                    <canvas id="graficoRosca"></canvas>
+                </div>
+            </div>
+
+            <div class="coluna-direita">
+
+                <div class="card-perfil" data-perfil="Comilão">
+                    <img class="perfil-imagem" src="../assets/imgs/Comilao.gif" alt="Perfil Comilão">
+                    <div class="perfil-texto">
+                        <span class="perfil-rotulo">Seu perfil de viajante</span>
+                        <h2>O Comilão</h2>
+                        <p class="perfil-frase">viaja pela barriga</p>
+                    </div>
+                </div>
+
+                <div class="card-perfil" data-perfil="Improvisador">
+                    <img class="perfil-imagem" src="../assets/imgs/Improvisador.gif" alt="Perfil Improvisador">
+                    <div class="perfil-texto">
+                        <span class="perfil-rotulo">Seu perfil de viajante</span>
+                        <h2>O Improvisador</h2>
+                        <p class="perfil-frase">viaja sem mapa</p>
+                    </div>
+                </div>
+
+                <div class="card-perfil" data-perfil="Fotógrafo">
+                    <img class="perfil-imagem" src="../assets/imgs/Fotografo.gif" alt="Perfil Fotógrafo">
+                    <div class="perfil-texto">
+                        <span class="perfil-rotulo">Seu perfil de viajante</span>
+                        <h2>O Fotógrafo</h2>
+                        <p class="perfil-frase">viaja pelas lentes</p>
+                    </div>
+                </div>
+
+                <div class="card-perfil" data-perfil="Dorminhoco">
+                    <img class="perfil-imagem" src="../assets/imgs/Dorminhoco.gif" alt="Perfil Dorminhoco">
+                    <div class="perfil-texto">
+                        <span class="perfil-rotulo">Seu perfil de viajante</span>
+                        <h2>O Dorminhoco</h2>
+                        <p class="perfil-frase">viaja para descansar</p>
+                    </div>
+                </div>
+
+                <div class="card-trilha">
+                    <h3>A trilha sonora da sua trip</h3>
+
+                    <div class="carrossel">
+                        <button class="seta" id="btnAnterior" type="button" aria-label="Música anterior">
+                            <i class='bx bx-chevron-left'></i>
+                        </button>
+
+                        <div class="faixas" id="faixas"></div>
+
+                        <button class="seta" id="btnProxima" type="button" aria-label="Próxima música">
+                            <i class='bx bx-chevron-right'></i>
+                        </button>
+                    </div>
+
+                    <div class="pontos" id="pontos"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/sidebar.js"></script>
     <script src="script.js"></script>
 
 </body>
