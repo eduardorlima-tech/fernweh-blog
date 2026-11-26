@@ -1,0 +1,599 @@
+html {
+    font-size: clamp(9px, min(1.111vw, 1.9vh), 20px);
+}
+
+:root {
+    --fundo: #e5dfc6;
+    --card: #f8f4e8;
+    --texto: #2a2619;
+    --laranja: #ff6b35;
+    --laranja-suave: rgba(255, 107, 53, 0.1);
+    --vermelho: #a3342a;
+    --borda: #9c9783;
+
+    --sombra-card: 0 6px 18px rgba(42, 38, 25, 0.12);
+    --sombra-foto: 0 3px 10px rgba(42, 38, 25, 0.18);
+    --transicao: all 0.3s ease;
+}
+
+body.dark {
+    --fundo: #18191a;
+    --card: #242526;
+    --texto: #e8e6dc;
+    --vermelho: #d4574c;
+    --borda: #5a5b5d;
+
+    --sombra-card: 0 6px 18px rgba(0, 0, 0, 0.45);
+    --sombra-foto: 0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html body {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--fundo);
+    color: var(--texto);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    transition: var(--transicao);
+}
+
+::selection {
+    background-color: var(--laranja);
+    color: #2a2619;
+}
+
+.pagina {
+    width: min(41.9rem, 92%);
+    margin: 0 auto;
+    padding: 3.3rem 0 2rem;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.topo-info {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--texto);
+    text-decoration: none;
+    transition: var(--transicao);
+}
+
+.topo-info:hover {
+    color: var(--laranja);
+}
+
+.card {
+    background-color: var(--card);
+    border-radius: 1.1rem;
+    transition: var(--transicao);
+}
+
+.card h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    line-height: 1.05;
+}
+
+.botoes {
+    display: flex;
+    gap: 0.85rem;
+}
+
+.botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14.6rem;
+    height: 2.9rem;
+    border: 1.5px solid transparent;
+    border-radius: 0.4rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--texto);
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.botao:hover {
+    filter: brightness(0.94);
+}
+
+.botao:active {
+    transform: translateY(1px);
+}
+
+.botao-laranja {
+    background-color: var(--laranja);
+    color: #2a2619;
+}
+
+.botao-contorno {
+    background-color: transparent;
+    border-color: var(--borda);
+}
+
+.botao-vermelho {
+    background-color: var(--vermelho);
+    border-color: var(--vermelho);
+    color: #fff;
+}
+
+.botao:focus-visible,
+.chip:focus-visible,
+.link-excluir:focus-visible,
+.voltar:focus-visible,
+.opcao:has(input:focus-visible) {
+    outline: 2px solid var(--texto);
+    outline-offset: 2px;
+}
+
+.card-inicio {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 32.75rem;
+    margin-top: 4.3rem;
+    padding: 0 3.1rem;
+    box-shadow: var(--sombra-card);
+}
+
+.eyebrow {
+    margin-bottom: 1.2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.card-inicio h1 {
+    margin-bottom: 1.4rem;
+    font-size: 2.65rem;
+}
+
+.texto {
+    max-width: 30.5rem;
+    margin-bottom: 1.4rem;
+    font-size: 0.86rem;
+    line-height: 1.55;
+}
+
+.link-excluir {
+    align-self: flex-start;
+    margin-top: 1.2rem;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--vermelho);
+    cursor: pointer;
+}
+
+.link-excluir:hover {
+    text-decoration: underline;
+}
+
+.fundo-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(38, 36, 27, 0.92);
+    z-index: 200;
+}
+
+.fundo-modal.aberto {
+    display: flex;
+}
+
+.modal {
+    width: min(27rem, 90%);
+    padding: 2.2rem 2.2rem 2.4rem;
+    border-radius: 1.1rem;
+    background-color: var(--card);
+    box-shadow: var(--sombra-card);
+}
+
+.modal h2 {
+    margin-bottom: 1.2rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.05;
+}
+
+.modal p {
+    margin-bottom: 1.4rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.modal .botao {
+    flex: 1;
+    width: auto;
+}
+
+.adesivo {
+    position: absolute;
+}
+
+.adesivo-coracao {
+    left: calc(50% - 38.7rem);
+    top: 15.6rem;
+    width: 14.7rem;
+}
+
+.adesivo-rosa {
+    left: calc(50% - 37.6rem);
+    top: 31.6rem;
+    width: 12.1rem;
+}
+
+.polaroid {
+    position: absolute;
+    width: 16.8rem;
+    padding: 0.5rem 0.5rem 1.6rem;
+    background-color: var(--card);
+    box-shadow: var(--sombra-foto);
+    transition: var(--transicao);
+}
+
+.polaroid img {
+    display: block;
+    width: 100%;
+}
+
+.polaroid span {
+    position: absolute;
+    left: 0.6rem;
+    bottom: 0.5rem;
+    font-size: 0.6rem;
+}
+
+.polaroid-inicio {
+    left: calc(50% + 24.8rem);
+    top: 14rem;
+    width: 17rem;
+}
+
+.polaroid-esquerda {
+    left: calc(50% - 40.2rem);
+    top: 15.9rem;
+    width: 17.6rem;
+    transform: rotate(-4deg);
+}
+
+.polaroid-direita {
+    left: calc(50% + 23.9rem);
+    top: 17.5rem;
+    transform: rotate(4deg);
+}
+
+.polaroid.sem-moldura {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    transform: none;
+}
+
+.trilha {
+    position: relative;
+    height: 2.2rem;
+    margin-top: 1.6rem;
+}
+
+.trilha::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1.05rem;
+    border-top: 1.5px dashed var(--borda);
+}
+
+.trilha-preenchida {
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--laranja);
+    transition: width 0.3s;
+}
+
+.pin {
+    position: absolute;
+    top: 0;
+    width: 1.5rem;
+    height: auto;
+    transform: translateX(-50%);
+    transition: left 0.3s;
+}
+
+.contagem {
+    margin: 0.3rem 0 1.5rem;
+    font-size: 0.8rem;
+}
+
+.card-quiz {
+    padding: 2rem 2.5rem 0;
+    box-shadow: var(--sombra-card);
+}
+
+.card-quiz h1 {
+    margin-bottom: 0.6rem;
+    font-size: 2rem;
+}
+
+.dica {
+    margin-bottom: 1.3rem;
+    font-size: 0.78rem;
+}
+
+#area {
+    min-height: 17.3rem;
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 3.05rem;
+    margin-bottom: 0.7rem;
+    padding: 0 1.2rem;
+    border: 1.5px solid var(--borda);
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.opcao:hover {
+    border-color: var(--laranja);
+}
+
+.opcao input {
+    appearance: none;
+    flex-shrink: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 1.5px solid var(--borda);
+    border-radius: 50%;
+    background-color: var(--card);
+    transition: var(--transicao);
+}
+
+.opcao input:checked {
+    border: 0.3rem solid var(--laranja);
+}
+
+.opcao:has(input:checked) {
+    border-color: var(--laranja);
+    background-color: var(--laranja-suave);
+}
+
+.grade-chips {
+    display: grid;
+    gap: 0.85rem;
+}
+
+.quatro-colunas {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.duas-colunas {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.chip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.4rem;
+    padding: 0 1.1rem;
+    border: 1.5px solid var(--borda);
+    border-radius: 0.6rem;
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--texto);
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.chip:hover {
+    border-color: var(--laranja);
+}
+
+.chip.marcado {
+    border-color: var(--laranja);
+    background-color: var(--laranja-suave);
+}
+
+.chip .sinal::before {
+    content: '+';
+}
+
+.chip.marcado .sinal::before {
+    content: '✔';
+}
+
+.campo-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.campo {
+    width: 100%;
+    height: 2.9rem;
+    margin-bottom: 1rem;
+    padding: 0 1.1rem;
+    border: 1.5px solid var(--borda);
+    border-radius: 0.5rem;
+    background-color: var(--card);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--texto);
+    transition: var(--transicao);
+}
+
+.campo::placeholder {
+    color: var(--borda);
+}
+
+.campo:hover {
+    border-color: var(--laranja);
+}
+
+.campo:focus {
+    outline: 2px solid var(--laranja);
+    border-color: var(--laranja);
+}
+
+.linha-musica {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 0.85rem;
+}
+
+.linha-musica .campo {
+    margin-bottom: 0.8rem;
+}
+
+.nota {
+    font-size: 0.7rem;
+}
+
+.erro {
+    min-height: 1.4rem;
+    font-size: 0.78rem;
+    color: var(--vermelho);
+}
+
+.rodape-quiz {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    margin: 0 -2.5rem;
+    padding: 0 2.5rem;
+    border-top: 1.5px dashed var(--borda);
+}
+
+.rodape-quiz::before,
+.rodape-quiz::after {
+    content: '';
+    position: absolute;
+    top: -0.5rem;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background-color: var(--fundo);
+    transition: var(--transicao);
+}
+
+.rodape-quiz::before {
+    left: -0.45rem;
+}
+
+.rodape-quiz::after {
+    right: -0.45rem;
+}
+
+.voltar {
+    border: none;
+    background: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: var(--texto);
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.voltar:hover {
+    color: var(--laranja);
+}
+
+.botao-proxima {
+    gap: 0.7rem;
+    width: auto;
+    padding: 0 1.4rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 1000px) {
+
+    .adesivo,
+    .polaroid {
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+        font-size: 13px;
+    }
+
+    .sidebar~.pagina {
+        width: auto;
+        margin-left: calc(88px + 0.8rem);
+        margin-right: 0.8rem;
+    }
+
+    .card-inicio {
+        height: auto;
+        padding: 2.5rem 1.6rem;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+
+    .botao {
+        width: 100%;
+    }
+
+    .quatro-colunas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .linha-musica {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
